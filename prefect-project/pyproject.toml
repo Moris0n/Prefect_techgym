@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "prefect-project"
+version = "0.1.0"
+description = ""
+authors = ["Moris0n <146327569+Moris0n@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+prefect = "^3.1.2"
+openai = "^1.54.4"
+sqlalchemy = "^2.0.36"
+psycopg2 = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
