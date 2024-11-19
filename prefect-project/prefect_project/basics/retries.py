@@ -8,8 +8,9 @@ def simulate_failure(failure_rate=0.3):
     if random.random() < failure_rate:
         raise FailedRun("Simulated task failure.")
 
-@task
+@task(retries=3, retry_delay_seconds=5)
 def fetch_user_info(user_id: int):
+    simulate_failure()
     time.sleep(2)  # Simulate fetching user data
     return {"user_id": user_id, "name": "John Doe"}
 

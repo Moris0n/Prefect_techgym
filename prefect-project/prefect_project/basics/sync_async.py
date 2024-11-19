@@ -24,7 +24,7 @@ def update_user_preferences(user_info: dict):
 
 # Flow to demonstrate both dependent and parallel execution
 @flow
-def user_account_flow(user_id: int):
+def user_account_flow(user_id: int = 100):
     # Step 1: Fetch user info (this must happen first)
     user_info = fetch_user_info.submit(user_id)
 
@@ -46,5 +46,5 @@ def user_account_flow(user_id: int):
 
 if __name__ == "__main__":
     # Run the flow
-    result = user_account_flow(101)
+    result = user_account_flow(200)
     print(result)
