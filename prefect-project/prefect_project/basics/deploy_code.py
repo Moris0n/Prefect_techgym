@@ -26,7 +26,5 @@ def main_flow(user_name:str="Mor"):
 
 
 if __name__ == "__main__":
-    main.from_source(
-        source="https://github.com/zzstoatzz/yt.git",
-        entrypoint="new-prefect-project/main.py:main",
-    ).deploy(name="My First Deployment", work_pool_name="docker-work")
+    main_flow.from_source(source="./", entrypoint="deploy_code.py:main_flow").deploy(name="deploment_worker", work_pool_name="my_wroker")
+ 
